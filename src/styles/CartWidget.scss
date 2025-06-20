@@ -1,0 +1,13 @@
+.carrito-contenedor {
+    display: inline-block;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    img {
+        height: 70px;
+        width: auto;
+    }
+}

@@ -1,0 +1,42 @@
+.navbar-container {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+
+    .nav__logo {
+        cursor: pointer;
+
+        img {
+            height: 70px;
+            width: auto;
+            transition: all .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .nav__links {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: 0px 20px;
+            transition: all .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            a {
+                font-weight: 700;
+                color: #141414;
+                text-decoration: none;
+            }
+        }
+    }
+}
