@@ -1,0 +1,69 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,700";
+
+.item-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    width: 240px;
+    position: relative;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .item__image {
+        display: block;
+        width: 100%;
+        height: 240px;
+        border: 1px solid #afafaf;
+        border-bottom: 0;
+        overflow: hidden;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .item__info {
+        width: 100%;
+        background: #000;
+        color: #fff;
+        position: relative;
+        padding: 40px 10px 20px 10px;
+        text-align: center;
+    
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        transition-property: color, height;
+        transition-duration: 0.3s, 0.4s;
+        transition-timing-function: ease-out;
+        height: 83px;
+
+        .item__name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .item__price {
+            background: #e32d2c;
+            position: absolute;
+            font-size: 1.3em;
+            padding: 4px 13px;
+            top: -15px;
+            right: 10px;
+        }
+    }
+}
+
+

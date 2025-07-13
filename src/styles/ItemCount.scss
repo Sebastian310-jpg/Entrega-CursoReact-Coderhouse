@@ -1,0 +1,40 @@
+.item-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+
+    .item-count__number {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    button {
+        padding: 5px 10px;
+        cursor: pointer;
+        border: none;
+        background-color: #1a9e1a;
+        color: white;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #41d427;
+        }
+    }
+
+    .item-count__btn-reset {
+        background-color: #e74c3c;
+        color: white;
+        display: grid;
+
+        &:hover {
+            background-color: #ff6b6b;
+        }
+
+        svg {
+            font-size: .9rem;
+        }
+    }
+
+}

@@ -1,22 +1,25 @@
 import './styles/App.scss'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-
   return (
-    <>
-        <NavBar />
+    <BrowserRouter>
+        <div className="app-container">
+            <NavBar />
 
-        <div className="productos-contenedor">
-            <ItemListContainer emoji='👟' nombre='Zapatilla' precio={40000} />
-            <ItemListContainer emoji='⚽' nombre='Pelota de Futbol' precio={5000} />
-            <ItemListContainer emoji='📱' nombre='Telefono' precio={1000000} />
-            <ItemListContainer emoji='👗' nombre='Vestido' precio={95000} />
-            <ItemListContainer emoji='🏐' nombre='Pelota de Voley' precio={3300} />
-            <ItemListContainer emoji='🎮' nombre='Joystick' precio={25000} />
+            <h2 className="title">Bienvenidos a mi Ecommerce</h2>
+            <Routes>
+                <Route path="/" element={ <ItemListContainer /> } />
+                <Route path="/category/:productsCategory" element={ <ItemListContainer /> } />
+                <Route path="/detail/:productId" element={ <ItemDetailContainer />} />
+                <Route path="*" element={<h2>404 Not Found</h2>} />
+            </Routes>
+
         </div>
-    </>
+    </BrowserRouter>
   )
 }
 

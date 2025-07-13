@@ -1,15 +1,20 @@
-import '../styles/ItemListContainer.scss'
+import useProducts from "../hooks/useProducts.js"
+import "../styles/ItemListContainer.scss"
+import ItemList from "./ItemList.jsx"
+import Loading from "./Loading.jsx"
+import { useParams } from "react-router-dom"
 
-const ItemListContainer = ({ emoji, nombre, precio }) => {
-  return (
-    <div className='item-container'>
-        <span className='item__emoji'>{emoji}</span>
-        <h3 className='item__nombre'>{nombre}</h3>
-        <p className='item__precio'>${precio}</p>
+const ItemListContainer = () => {
+    const { productsCategory } = useParams()
+    const { products, loading } = useProducts(productsCategory)
 
-        <button>Añadir al Carrito</button>
-    </div>
-  )
-}
+    return (
+      <div className="products-container">
+        {
+            loading ? <Loading /> : products.map(product => <ItemList product={product} />)
+        }
+      </div>
+    );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
