@@ -1,12 +1,19 @@
-import '../styles/CartWidget.scss'
 import { IoMdCart } from "react-icons/io";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+
+import '../styles/CartWidget.scss'
 
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext)
+
   return (
     <div>
-        <a href="#" className="carrito-contenedor">
+        <Link to="/cart" className="cart-widget">
             <IoMdCart className="icon" />
-        </a>
+            <h3>{totalQuantity()}</h3>
+        </Link>
     </div>
   )
 }

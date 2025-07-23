@@ -11,7 +11,7 @@ const ItemListContainer = () => {
     return (
       <div className="products-container">
         {
-            loading ? <Loading /> : products.map(product => <ItemList product={product} />)
+            loading ? <Loading /> : products.map(product => <ItemList product={product} key={product.id} />)
         }
       </div>
     );
