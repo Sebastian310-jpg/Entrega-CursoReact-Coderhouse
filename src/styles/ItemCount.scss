@@ -1,19 +1,19 @@
-.item-count__actions {
+.item-count {
     display: flex;
     align-items: center;
     gap: 20px;
 
-    .item-count {
+    .item-count__actions {
         display: flex;
         align-items: center;
         gap: 10px;
         margin: 0;
-    
+
         .item-count__add {
             outline: 0;
             border: 0;
             padding: 8px 16px;
-            background-color: #1a9e1a;
+            background-color: #2ecc71;
             color: white;
             border-radius: 10px;
             text-transform: uppercase;
@@ -21,41 +21,41 @@
             font-family: inherit;
             font-weight: 500;
             transition: all 0.3s ease;
-        
+
             &:hover {
-                background-color: #41d427;
+                background-color: #27ae60;
                 cursor: pointer;
             }
         }
-    
+
         .item-count__number {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
         }
-    
+
         button {
             padding: 5px 10px;
             cursor: pointer;
             border: none;
-            background-color: #1a9e1a;
+            background-color: #2ecc71;
             color: white;
             border-radius: 5px;
-    
+
             &:hover {
-                background-color: #41d427;
+                background-color: #27ae60;
             }
         }
-    
+
         .item-count__btn-reset {
             background-color: #e74c3c;
             color: white;
             display: grid;
-    
+
             &:hover {
-                background-color: #ff6b6b;
+                background-color: #c0392b;
             }
-    
+
             svg {
                 font-size: .9rem;
             }

@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { RiResetLeftLine } from "react-icons/ri"
+import { Link } from "react-router-dom"
 import "../styles/ItemCount.scss"
 
 
-const ItemCount = ({ stock, addProduct }) => {
+const ItemCount = ({ stock, addProduct, inCart }) => {
     const [count, setCount] = useState(1)
 
     const handleClickIncrement = () => count < stock && setCount(count + 1)
@@ -12,13 +13,13 @@ const ItemCount = ({ stock, addProduct }) => {
     const handleClickReset = () => setCount(1)
 
   return (
-    <div className="item-count__actions">
-        <div className="item-count">
+    <div className="item-count">
+        <div className="item-count__actions">
             <button onClick={handleClickIncrement}>+</button>
             <h2 className="item-count__number">{count}</h2>
             <button onClick={handleClickDecrement}>-</button>
             <button onClick={handleClickReset} className="item-count__btn-reset"><RiResetLeftLine /></button>
-
+            
             <button className="item-count__add" onClick={ () => addProduct(count) }>Añadir al Carrito</button>
         </div>
     </div>

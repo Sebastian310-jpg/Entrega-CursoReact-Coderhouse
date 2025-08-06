@@ -1,8 +1,8 @@
 import useProducts from "../hooks/useProducts.js"
-import "../styles/ItemListContainer.scss"
 import ItemList from "./ItemList.jsx"
 import Loading from "./Loading.jsx"
 import { useParams } from "react-router-dom"
+import "../styles/ItemListContainer.scss"
 
 const ItemListContainer = () => {
     const { productsCategory } = useParams()

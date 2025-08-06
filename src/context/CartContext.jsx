@@ -42,8 +42,20 @@ const CartProvider = ({ children }) => {
         setCart([])
     }
 
+    const updateQuantity = (id, newQuantity) => {
+        const updatedCart = cart.map((prod) => {
+            if (prod.id === id){
+                return { ...prod, quantity: newQuantity }
+            } else {
+                return prod
+            }
+        })
+
+        setCart(updatedCart)
+    }
+
     return(
-        <CartContext.Provider value={{ cart, addProductInCart, totalQuantity, totalPrice, deleteProductById, clearCart }}>
+        <CartContext.Provider value={{ cart, addProductInCart, totalQuantity, totalPrice, deleteProductById, clearCart, updateQuantity }}>
             {children}
         </CartContext.Provider>
     )
